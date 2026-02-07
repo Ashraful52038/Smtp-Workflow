@@ -29,7 +29,19 @@ func NewMessageBuilder() *MessageBuilder {
 }
 
 func (b *MessageBuilder) UseTemplate(name string, data map[string]string) *MessageBuilder {
-	emailTemplate, _ := template.ParseFiles(name)
+	templatePath := "templates/" + name
+	emailTemplate, err := template.ParseFiles(templatePath)
+	if err != nil {
+		emailTemplate, _ = template.New("default").Parse(`
+			<!DOCTYPE html>
+			<html>
+			<body>
+				<h1>{{.Title}}</h1>
+				<p>{{.Message}}</p>
+			</body>
+			</html>
+		`)
+	}
 	b.template = emailTemplate
 	b.templateData = data
 	b.header["Content-Type"] = "text/html"
