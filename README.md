@@ -5,7 +5,7 @@
 A Go-based email sending system using Mailpit as a test SMTP server. This project demonstrates how to send both plain text and HTML emails via SMTP and view them in Mailpit's web dashboard.
 
 ## 📁 Project Structure
-
+`
 SMTP-Workflow/
 ├── main.go # Main Go program
 ├── go.mod # Go module file
@@ -13,7 +13,7 @@ SMTP-Workflow/
 ├── mailer/ # Custom mailer package
 │ ├── mail_message.go # Message building logic
 │ └── mail_smtp.go # SMTP connection logic
-└── README.md # This file
+└── README.md # This file`
 
 ⚙️ Prerequisites
 1. Software Requirements:
