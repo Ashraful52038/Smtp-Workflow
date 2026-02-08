@@ -16,7 +16,7 @@ func main() {
 		Port   int
 		Sender string
 	}{
-		Host:   "localhost",
+		Host:   "127.0.0.1",
 		Port:   1025,
 		Sender: "test@mailpit.com",
 	}
@@ -48,7 +48,7 @@ func main() {
 	//Html Mail
 	builder := mailer.NewMessageBuilder()
 
-	htmlBody := `<!DOCTYOPE html>
+	htmlBody := `<!DOCTYPE html>
 	<html>
 	<head>
 		<style>
