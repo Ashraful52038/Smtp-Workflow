@@ -6,14 +6,21 @@ A Go-based email sending system using Mailpit as a test SMTP server. This projec
 
 ## 📁 Project Structure
 
-SMTP-Workflow/
-├── main.go # Main Go program
-├── go.mod # Go module file
-├── go.sum # Dependency lock file
-├── mailer/ # Custom mailer package
-│ ├── mail_message.go # Message building logic
-│ └── mail_smtp.go # SMTP connection logic
-└── README.md # This file
+```mermaid
+flowchart TD
+    Root[SMTP-Workflow] --> Main[main.go]
+    Root --> GoMod[go.mod]
+    Root --> GoSum[go.sum]
+    Root --> Readme[README.md]
+    Root --> Mailer[mailer package]
+    Root --> Templates[templates folder]
+    
+    Mailer --> MsgBuilder[mail_message.go]
+    Mailer --> SMTP[mail_smtp.go]
+    
+    Templates --> Welcome[welcome.html]
+    Templates --> Simple[simple.html]
+```
 
 ⚙️ Prerequisites
 1. Software Requirements:
